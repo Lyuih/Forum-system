@@ -1,0 +1,20 @@
+# application.yml
+# Spring 全局配置
+spring:
+  application:
+    name: yui论坛 # 项⽬名
+  output:
+    ansi:
+      enabled: ALWAYS # 控制台输出彩⾊⽇志
+# 服务器配置
+server:
+  port: 58080 # 指定端⼝号
+# ⽇志配置
+logging:
+  pattern:
+    dateformat: HH:mm:ss
+  level:
+    root: info # 默认⽇志级别
+    com.yui.forum: debug # 指定包的⽇志级别
+  file:
+    path: D:\log\project\forum # ⽇志保存⽬录
