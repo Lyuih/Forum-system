@@ -44,7 +44,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yui.forumsystem.model.Article">
+  <insert id="insertSelective" parameterType="com.yui.forumsystem.model.Article" useGeneratedKeys="true" keyProperty="id">
     insert into t_article
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

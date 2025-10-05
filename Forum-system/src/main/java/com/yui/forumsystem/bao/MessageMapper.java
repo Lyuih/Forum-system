@@ -1,7 +1,9 @@
 package com.yui.forumsystem.bao;
 
 import com.yui.forumsystem.model.Message;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface MessageMapper {
     int insert(Message row);
 

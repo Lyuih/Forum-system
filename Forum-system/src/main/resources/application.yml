@@ -25,3 +25,8 @@ logging:
     com.yui.forum: debug # 指定包的⽇志级别
   file:
     path: D:/log/project/forum # ⽇志保存⽬录
+
+
+# mybatis 相关配置，单独配置，顶格写
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml # 指定 xxxMapper.xml的扫描路径

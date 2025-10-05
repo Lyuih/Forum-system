@@ -29,7 +29,7 @@
     from t_user
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <insert id="insert" parameterType="com.yui.forumsystem.model.User">
+  <insert id="insert" parameterType="com.yui.forumsystem.model.User" useGeneratedKeys="true" keyProperty="id">
     insert into t_user (id, username, password, 
       nickname, phoneNum, email, 
       gender, salt, avatarUrl, 

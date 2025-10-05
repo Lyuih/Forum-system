@@ -1,7 +1,9 @@
 package com.yui.forumsystem.bao;
 
 import com.yui.forumsystem.model.User;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserMapper {
     int insert(User row);
 

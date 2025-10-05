@@ -1,5 +1,7 @@
 package com.yui.forumsystem;
 
+import com.yui.forumsystem.bao.UserMapper;
+import com.yui.forumsystem.model.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,6 +16,8 @@ class ForumSystemApplicationTests {
     @Resource
     private DataSource dataSource;
 
+    @Resource
+    private UserMapper userMapper;
 
     @Test
     void testConnection() throws SQLException {
@@ -22,6 +26,16 @@ class ForumSystemApplicationTests {
         System.out.println("connection = " + connection);
         connection.close();
     }
+
+    @Test
+    void testUserMapper() {
+        User user = userMapper.selectByPrimaryKey(1L);
+        System.out.println(user);
+        System.out.println(user.getUsername());
+    }
+
+
+
     @Test
     void contextLoads() {
         System.out.println("you can see me");
