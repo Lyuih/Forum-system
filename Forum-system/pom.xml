@@ -24,6 +24,8 @@
         <mybatis-starter.version>2.3.0</mybatis-starter.version>
         <!-- 数据源-->
         <druid-starter.version>1.2.16</druid-starter.version>
+        <!-- -->
+        <mybatis-generator-plugin-version>1.4.1</mybatis-generator-plugin-version>
     </properties>
     <dependencies>
         <dependency>
@@ -110,6 +112,34 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- mybatis ⽣成器插件 -->
+            <plugin>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-maven-plugin</artifactId>
+            <version>${mybatis-generator-plugin-version}</version>
+            <executions>
+            <execution>
+            <id>Generate MyBatis Artifacts</id>
+                <phase>deploy</phase>
+                <goals>
+                    <goal>generate</goal>
+                </goals>
+            </execution>
+            </executions>
+                <!-- 相关配置 -->
+                <configuration>
+                    <!-- 打开⽇志 -->
+                    <verbose>true</verbose>
+                    <!-- 允许覆盖 -->
+                    <overwrite>true</overwrite>
+                    <!-- 配置⽂件路径 -->
+                    <configurationFile>
+                        src/main/resources/mybatis/generatorConfig.xml
+                    </configurationFile>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
