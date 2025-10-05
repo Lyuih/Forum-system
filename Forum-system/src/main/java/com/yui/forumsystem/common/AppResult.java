@@ -1,14 +1,19 @@
 package com.yui.forumsystem.common;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class AppResult<T>{
 
     //状态码
+    @JsonInclude(JsonInclude.Include.ALWAYS)//无论属性值是否为null都进行序列化
     private long code;
 
     //描述信息
+    @JsonInclude(JsonInclude.Include.ALWAYS)
     private String message;
 
     //具体的数据
+    @JsonInclude(JsonInclude.Include.ALWAYS)
     private T data;
 
     public AppResult() {}
