@@ -6,6 +6,13 @@ spring:
   output:
     ansi:
       enabled: ALWAYS # 控制台输出彩⾊⽇志
+
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/forum_db?characterEncoding=utf8&useSSL=false # 数据库连接串 对应5.7.x
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver # 数据库连接驱动 对应5.7.x
 # 服务器配置
 server:
   port: 58080 # 指定端⼝号

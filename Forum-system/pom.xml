@@ -16,6 +16,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.7.6</spring-boot.version>
+
+        <!-- 数据库驱动 对于数据库的版本为5.7.x-->
+        <mysql-connector.version>5.1.49</mysql-connector.version>
+        <!-- Mybatis依赖-->
+
+        <mybatis-starter.version>2.3.0</mybatis-starter.version>
+        <!-- 数据源-->
+        <druid-starter.version>1.2.16</druid-starter.version>
     </properties>
     <dependencies>
         <dependency>
@@ -39,6 +47,27 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- MySQL驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId> mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+<!--    Mybatis依赖 其中已经包含了spring-jdbc不再重复引用-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-starter.version}</version>
+        </dependency>
+<!--    阿里巴巴druid数据源-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid-starter.version}</version>
+        </dependency>
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
