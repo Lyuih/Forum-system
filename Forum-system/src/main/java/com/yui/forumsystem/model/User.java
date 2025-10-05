@@ -1,13 +1,16 @@
 package com.yui.forumsystem.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.Date;
 
+@ApiModel("用户信息")
 @Data
 public class User {
     private Long id;
-
+    @ApiModelProperty("用户名")
     private String username;
 
     private String password;

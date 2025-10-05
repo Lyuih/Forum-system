@@ -6,6 +6,9 @@ spring:
   output:
     ansi:
       enabled: ALWAYS # 控制台输出彩⾊⽇志
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER #Springfox-Swagger兼容性配置
 
 
   datasource:
